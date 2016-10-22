@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Enriqueta" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<title>
+SEED Sustainable
+</title>
+
+<style>
+/*------ General -------------------------------------------------------*/
+header {
+	padding-top: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-bottom: 5%;
+}
+#main.container-fluid{
+	padding: 0px;
+	margin: 0px;
+}
+#body {
+	clear: both;
+	margin-left: 15%;
+	margin-right: 15%;
+    margin-bottom: 5%;
+}
+#bg {
+	padding-top: 50px;
+	background-color: white;	
+}
+footer {
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+}
+
+#f1 {
+    float: left;
+    margin-top: -8px;
+    margin-bottom: 30px;
+}
+
+#f2a {
+    margin-top: 20px;
+    color: #848079;
+    clear: both;
+}
+#f2b {
+    color: #848079;
+    display: none;
+    margin-bottom: 30px;
+}
+
+#f1wrap {
+    display:inline-block;
+    margin:0 auto;
+}
+
+#f1contain {
+    text-align: center;
+}
+
+#f3a {
+    margin-top: 20px;
+    color: #848079;
+    text-align: left;
+}
+#f3b {
+    color: #848079;
+    display: none;
+}
+
+#link {
+    text-decoration: underline;
+    color: rgba(69,186,1,1);
+}
+    
+a:visited { 
+    background-color: white;
+}
+
+h1 {
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    color: #585551;
+}
+h2 {
+    font-style: normal;
+}
+    
+#slogan {
+    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    margin-top: -10px;
+    color: #848079;
+}
+
+/*------ Menu -------------------------------------------------------- */
+.navbar-default {
+     background-color: white;
+     background-image: none;
+     background-repeat: none;
+     border-color: white;
+}
+.dropdown-menu {
+    border-color: white;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    color: #848079;
+}
+.navbar-default .navbar-nav > .active > a
+{
+    color: #45BA01;
+    background: white;
+}
+.navbar-default .navbar-nav > li > a {
+    background: white;
+    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    color: #848079;
+}
+.navbar-default .navbar-nav > li > a.active {
+    color: #45BA01;
+}
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #45BA01;
+    background: white;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: white;
+    color: #45BA01;
+}
+.dropdown-menu > li > a:hover {
+    background-color: white;
+    color: #45BA01;
+}
+.dropdown-menu > li > a.active{
+    background-color: white;
+    color: #45BA01;
+}
+.dropdown-toggle:active, .open .dropdown-toggle {
+	background:white!important; 
+	color: #45BA01 !important;
+}
+.navbar-toggle {
+	background-color: white;	
+}
+#bar {
+    border-right-style: solid;
+    border-right-width: 1px; 
+}
+#logotop {
+	display: inline-block;	
+	float: left;
+	margin-right: 10px;
+}
+#titletop {
+    margin-top: 30px;
+	display: inline-block;
+	clear: both;
+}
+#myNavbar {
+	padding-top: 65px;	
+}
+.navbar-header button {
+	margin-top: 80px;	
+}
+    
+a#submenu1 { 
+    display: inline-block; 
+    padding-right: 0px;
+}
+a#submenu2 {
+    display: inline-block;     
+    padding-left: 0px;
+}
+    
+.navbar-default .navbar-nav>.open>a {
+    color: #848079;
+    background-color: white;
+}
+    
+/*--------- Contact Page --------------------------------------------------*/ 
+#contactbg {
+    position: relative;
+    margin-bottom: 5%;
+}
+    
+#contactbg img {
+    width: 100%;
+    height: auto;
+}
+    
+#overlay {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: center;
+    position: absolute;
+    background: rgba(69, 186, 1, 1);
+    color: white;
+    bottom: 30%;
+    left: 28%;
+    width: 50%;
+}
+    
+.row3 {
+    margin: 3%;
+    overflow: hidden;
+
+}
+
+#form1 {
+    color: #585551;
+}
+
+input {
+    color: #848079;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    border-color: rgba(143, 209, 105, 1);
+    border-width: 1px;
+    border-style: solid;
+    
+}
+    
+textarea {
+    width: 100%;
+    height: 110px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-top: 0px;
+    resize: none;   
+    border-color: rgba(143, 209, 105, 1);
+    border-width: 1px;
+    border-style: solid;
+    color: #848079;
+}
+    
+#send {
+    padding: 5px;
+    background-color: #8FD169;
+    color: white;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-width: 0px;
+}
+
+#cf1 {
+    float: left;    
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+#cf2 {
+    float: left;
+    margin-bottom: 50px;
+}
+
+#cf3 {
+    border-color: #848079;
+    border-width: 3px;
+    border-style: solid;
+    padding: 15px;
+    clear: both;
+    width: 80%;
+}
+
+#sub {
+    width: 100%;
+    padding: 10px;
+    background-color: #8FD169;
+    color: white;
+    margin-right: -4px;
+    border-width: 0px;
+}
+
+#map {    
+    width:100%;
+    height:300px;
+}
+
+#highlight {
+    color: rgba(69,186,1,1);
+}    
+
+/*--------- Media Queries --------------------------------------------------*/
+/* Screen 768px or smaller (Mobile) */
+@media only screen and (max-width: 768px)
+{
+	#logotop {
+		clear: both;	
+		display: none;
+	}
+	
+	header {
+		padding-top: 1%;
+		margin-left: 1%;
+		margin-right: 1%;
+		padding-bottom: 5%;
+	}
+	#bar {
+   	 	border-right-style: none;
+    	border-right-width: 0px; 
+	}
+    
+    #myNavbar {
+	   padding-top: 0px;	
+    }
+	
+    a#submenu1 { 
+        display: inline-block; 
+        padding-right: 10px;
+    }
+    a#submenu2 {
+        display: inline-block;  
+        width: 20%;
+        padding-left: 10px;
+    }
+    
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-left: 5%;
+	    margin-right: 5%;
+    }
+    
+    #f1contain, #f2b {
+        text-align: left;
+    }
+    
+    #f2a {
+        display: none;
+    }
+    #f2b {
+        display: block;
+    }
+    
+    #f3a {
+        display: none;
+    }
+    #f3b {
+        text-align: right;
+        display: block;
+    }
+    #media {
+        display: none;
+    }
+
+    /* Contact */
+    #contactbg {
+        position: relative;
+        margin: 5%;
+    }
+    #overlay {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        text-align: center;
+        position: absolute;
+        background: rgba(69, 186, 1, 1);
+        color: white;
+        bottom: 20%;
+        left: 28%;
+        width: 50%;
+    }
+    #rightfield {
+        clear: both;
+    }
+    #cf3 {
+        border-color: #848079;
+        border-width: 3px;
+        border-style: solid;
+        padding: 15px;
+        clear: both;
+        width: 100%;
+    }
+    #map {    
+        width:90%;
+        margin:auto;
+        height:300px;
+    }
+}
+    
+/* Screen 956px or smaller */
+@media only screen and (max-width: 956px)
+{
+	header {
+		padding-top: 1%;
+		margin-left: 0%;
+		margin-right: 0%;
+		padding-bottom: 5%;
+	}
+	
+	#body {
+		clear: both;
+		margin-left: 0%;
+		margin-right: 0%;
+	}
+    
+    footer {
+        text-align: center;
+        margin-left: 5%;
+	    margin-right: 5%;
+    }
+    
+}
+
+/* Screen 768px or larger */
+@media only screen and (min-width: 768px) 
+{
+    ul.nav li.dropdown:hover > ul.dropdown-menu 
+    {
+       display: block;
+    }
+}
+
+</style>
+<script>
+// Google Maps
+function initialize() {
+    var myCenter = new google.maps.LatLng(43.647814,-79.39461110000002);
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {center: myCenter, zoom: 15};
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
+    var infowindow = new google.maps.InfoWindow({
+        content: "SEED SUSTAINABLE"
+    });
+    infowindow.open(map,marker);
+
+    google.maps.event.addDomListener(window, "resize", function() {
+        google.maps.event.trigger(map, "resize");
+        map.setCenter(myCenter);   
+    });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+function toggle() {
+    initialize();
+    google.maps.event.trigger(map, "resize");
+    map.setCenter(myCenter);
+} 
+  
+</script>
+<script>
+$(document).ready(function(){
+    $("#bg").hide().fadeIn(1000);
+                                
+});
+</script>   
+</head>
+
+<body>
+<div class="container-fluid" id="main">
+
+<header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> 
+        <img id="logotop" src="./logo.jpg" alt="logo">
+        <div id="titletop"> 
+      		<h1> SEED SUSTAINABLE </h1>
+      		<p id="slogan"> Sustainable Investments &amp; Finance </p> 
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="bar"><a href="./index.html">Home</a></li>
+        <li id="bar"><a href="./about.html">About</a></li>
+        <li id="bar" class="dropdown">
+            <a id="submenu1" href="./work.html"> Work</a> 
+            <a id="submenu2" class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret dropdown-toggle" data-toggle="dropdown"></span></a> 
+          <ul class="dropdown-menu">
+           	<li><a href="./research.html">Investment Research</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Business Development</a></li>
+          </ul>
+        </li>
+        <li><a href="./contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header> <!-- end header ------------------------------------------------------------------>
+
+<section id="bg">
+    <section id="body">
+        <div id="Contact">
+            <div id="contactbg">
+                <img src="./contact.jpg" alt="contact">    
+                <div id="overlay">
+                    <h2> Contact us! </h2>   
+                </div>
+            </div>
+            <div class="row3">
+                <div class="col-sm-5">
+                    <form>
+                        <div id="form">
+                            <h4 id="form1"> Name </h4>
+                            <input type="text" name="Name"><br>
+                            <h4 id="form1"> Email </h4>
+                            <input type="text" name="Email"><br>
+                            <h4 id="form1"> Subject </h4>
+                            <input type="text" name="Subject"><br>
+                            <h4 id="form1"> Message </h4>
+                            <textarea></textarea>
+                            <br>
+                            <input id="send" type="submit" value="Send">
+                        </div>
+                    </form>
+       
+                </div>    
+
+                <div class="col-sm-7" id="rightfield">
+                    <div id="cf1">
+                        <h1> SEED SUSTAINABLE </h1>
+                        <p id="slogan"> Sustainable Investments &amp; Finance </p>
+                    </div>
+                    <div id="cf2">
+                        <p id="highlight"> Tel: 416-895-7111 </p>
+                        <p id="highlight"> 401 Richmond St W., Suite 404 <br> Toronto, ON, M5V 3A8</p>
+                    </div>
+                    <div id="cf3">
+                        <p id="highlight"> Join our mailling list <br> Never miss an update. </p>
+                        <form>
+                            <input type="text" name="Name2"  placeholder="Name"><br><br>
+                            <input type="text" name="Email2"  placeholder="Email Address"><br><br>
+                            <input id="sub" type="submit" value="Subscribe Now">
+                        </form>
+                    </div>
+                </div>
+          </div>
+          <br>
+          <div id="map"></div>
+        </div> <!-- end Contact tab -->
+
+
+
+    </section>  <!-- end id=body -------------------------------------------------------------->
+</section>
+
+<footer>
+    <div class="row2">
+        <div class="col-sm-4">
+            <div id="f1contain">
+            <div id="f1wrap">
+            <div id="f1">
+                <h1> SEED SUSTAINABLE </h1>
+                <p id="slogan"> Sustainable Investments &amp; Finance </p>
+            </div>
+            <img id="hstar" src="./hstar.jpg" alt="half star">
+            </div>
+            </div>
+        </div>    
+
+        <div class="col-sm-4">
+            <div id="f2a">
+                &copy;2016 Seed Sustainable  
+                <p> <a href="www.seedsustainable.com" id="link"> www.seedsustainable.com </a> </p>
+            </div>
+            <div id="f2b">
+                <p>401 Richmond St W., Suite 404
+                <br> Toronto, ON,  M5V 3A8 </p>
+            </div>
+        </div>
+        
+        <div class="col-sm-4">
+            <div id="f3a">
+                <p>401 Richmond St W., Suite 404 
+                <br> Toronto, ON,  M5V 3A8</p>    
+            </div>    
+            <div id="f3b">
+                &copy;2016 Seed Sustainable  
+                <p> <a href="www.seedsustainable.com" id="link"> www.seedsustainable.com </a> </p>
+            </div> 
+            <br>
+            <div id="media">
+                <a href="https://www.facebook.com"><img src="./fb.png" alt="facebook icon" height="30" width="30"></a>
+                <a href="https://www.twitter.com"><img src="./twitter.png" alt="facebook icon" height="30" width="30"></a>
+            </div>
+        </div>
+  </div>
+
+</footer>
+
+</div> <!-- end fluid id=main div --------------------------------------------------------->
+</body>
+</html>

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Enriqueta" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>
+SEED Sustainable
+</title>
+
+<style>
+/*------ General -------------------------------------------------------*/
+header {
+	padding-top: 1%;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-bottom: 5%;
+}
+#main.container-fluid{
+	padding: 0px;
+	margin: 0px;
+}
+#body {
+	clear: both;
+	margin-left: 15%;
+	margin-right: 15%;
+    margin-bottom: 5%;
+}
+#bg {
+	padding-top: 50px;
+	background-color: white;	
+}
+footer {
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+}
+
+#f1 {
+    float: left;
+    margin-top: -8px;
+    margin-bottom: 30px;
+}
+
+#f2a {
+    margin-top: 20px;
+    color: #848079;
+    clear: both;
+}
+#f2b {
+    color: #848079;
+    display: none;
+    margin-bottom: 30px;
+}
+
+#f1wrap {
+    display:inline-block;
+    margin:0 auto;
+}
+
+#f1contain {
+    text-align: center;
+}
+
+#f3a {
+    margin-top: 20px;
+    color: #848079;
+    text-align: left;
+}
+#f3b {
+    color: #848079;
+    display: none;
+}
+
+#link {
+    text-decoration: underline;
+    color: rgba(69,186,1,1);
+}
+    
+a:visited { 
+    background-color: white;
+}
+
+h1 {
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    color: #585551;
+}
+h2 {
+    font-style: normal;
+}
+    
+#slogan {
+    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    margin-top: -10px;
+    color: #848079;
+}
+    
+/*------ Menu -------------------------------------------------------- */
+.navbar-default {
+     background-color: white;
+     background-image: none;
+     background-repeat: none;
+     border-color: white;
+}
+.dropdown-menu {
+    border-color: white;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    color: #848079;
+}
+.navbar-default .navbar-nav > .active > a
+{
+    color: #45BA01;
+    background: white;
+}
+.navbar-default .navbar-nav > li > a {
+    background: white;
+    font-size: 14px;
+    font-family: 'Enriqueta', serif;
+    color: #848079;
+}
+.navbar-default .navbar-nav > li > a.active {
+    color: #45BA01;
+}
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #45BA01;
+    background: white;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: white;
+    color: #45BA01;
+}
+.dropdown-menu > li > a:hover {
+    background-color: white;
+    color: #45BA01;
+}
+.dropdown-menu > li > a.active{
+    background-color: white;
+    color: #45BA01;
+}
+.dropdown-toggle:active, .open .dropdown-toggle {
+	background:white!important; 
+	color: #45BA01 !important;
+}
+.navbar-toggle {
+	background-color: white;	
+}
+#bar {
+    border-right-style: solid;
+    border-right-width: 1px; 
+}
+#logotop {
+	display: inline-block;	
+	float: left;
+	margin-right: 10px;
+}
+#titletop {
+    margin-top: 30px;
+	display: inline-block;
+	clear: both;
+}
+#myNavbar {
+	padding-top: 65px;	
+}
+.navbar-header button {
+	margin-top: 80px;	
+}
+
+a#submenu1 { 
+    display: inline-block; 
+    padding-right: 0px;
+}
+a#submenu2 {
+    display: inline-block;     
+    padding-left: 0px;
+}
+    
+.navbar-default .navbar-nav>.open>a {
+    color: #848079;
+    background-color: white;
+}    
+
+/*--------- Investment Research Page --------------------------------------------------*/  
+.active2 {
+    color: #45BA01 !important;    
+}
+    
+ #slidepic {
+    max-width: 1000px;
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+}
+
+.mySlides, .mySlides2 {
+    display:none
+}
+
+/* Slideshow container */
+.slideshow-container, .slideshow-container2 {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot, .dot2 {
+  display: none;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+    
+#boxover {
+    position:absolute;
+    width: 40%;
+    left: 32%; 
+    top: 35%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(69, 186, 1, 1);
+    color: white;
+}
+
+#moveleft {
+    margin-left: 50%;
+    color: #848079;
+}
+
+#length2 {
+    width: 60px;
+}
+    
+/* Grid */
+.row > .column {
+    padding: 0 8px;
+}
+    
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column {
+    float: left;
+    width: 25%;
+    margin: 10px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.column img {
+    width: 100%;
+    height: 80%;
+    padding: 10px 1px;
+    transition: 0.3s;
+}
+.column img:hover {
+    opacity: 0.2;
+}
+
+#grid {
+    width: 80%;
+    margin-left: 16%;
+}
+    
+/* Same height panels */
+.row { 
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+    
+/* Modal */
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 700px;
+}
+    
+/* Add Animation */
+.modal-content, #caption, .mySlides3 img {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 1s;
+    animation-name: zoom;
+    animation-duration: 1s;
+}
+@-webkit-keyframes zoom {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes zoom {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}    
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  opacity: 1;
+}
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mySlides3 {
+  display: none;
+}
+.mySlides3 img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    background-color: black;
+}
+    
+.cursor {
+  cursor: pointer
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0%;
+  border-radius: 3px 0 0 3px;
+}
+    
+.prev {
+    left: 0%;
+    border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+/*--------- Media Queries --------------------------------------------------*/
+/* Screen 768px or smaller (Mobile) */
+@media only screen and (max-width: 768px)
+{
+	#logotop {
+		clear: both;	
+		display: none;
+	}
+	
+	header {
+		padding-top: 1%;
+		margin-left: 1%;
+		margin-right: 1%;
+		padding-bottom: 5%;
+	}
+	#bar {
+   	 	border-right-style: none;
+    	border-right-width: 0px; 
+	}
+    
+    #myNavbar {
+	   padding-top: 0px;	
+    }
+    
+    a#submenu1 { 
+        display: inline-block; 
+        padding-right: 10px;
+    }
+    a#submenu2 {
+        display: inline-block;  
+        width: 20%;
+        padding-left: 10px;
+    }
+    
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-left: 5%;
+	    margin-right: 5%;
+    }
+    
+    #f1contain, #f2b {
+        text-align: left;
+    }
+    
+    #f2a {
+        display: none;
+    }
+    #f2b {
+        display: block;
+    }
+    
+    #f3a {
+        display: none;
+    }
+    #f3b {
+        text-align: right;
+        display: block;
+    }
+    #media {
+        display: none;
+    }
+    
+    /* Investment Research */
+    #IR {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #moveleft {
+        margin-left: 0%;
+    }
+    
+    #grid {
+        width: 100%;
+        margin: 5%;
+    }
+    
+    .column img {
+        width: 100%;
+        height: 85%;
+        padding: 10px 1px;
+        transition: 0.3s;
+    }
+    
+    .column {
+        float: left;
+        width: 40%;
+        margin: 10px;
+        background-color: lightgray;
+        text-align: center;
+    }
+    
+    #boxover {
+        position:absolute;
+        width: 90%;
+        left: 5%; 
+        top: 20%;
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(69, 186, 1, 1);
+        color: white;
+    }
+    
+}
+    
+/* Screen 956px or smaller */
+@media only screen and (max-width: 956px)
+{
+	header {
+		padding-top: 1%;
+		margin-left: 0%;
+		margin-right: 0%;
+		padding-bottom: 5%;
+	}
+	
+	#body {
+		clear: both;
+		margin-left: 0%;
+		margin-right: 0%;
+	}
+    
+    footer {
+        text-align: center;
+        margin-left: 5%;
+	    margin-right: 5%;
+    }
+    
+    /* ------------------ */
+    #IR {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+     #grid {
+        width: 100%;
+        margin: 5%;
+    }
+
+}
+   
+/* Screen 768px or larger */
+@media only screen and (min-width: 768px) 
+{
+    ul.nav li.dropdown:hover > ul.dropdown-menu 
+    {
+       display: block;
+    }
+}
+
+</style>
+<script>
+// Open Modal from grid
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+    
+// Modal slideshow functions
+var slideIndex3 = 1;
+showSlides3(slideIndex3);
+    
+function plusSlides(n) {
+  showSlides3(slideIndex3 += n);
+}
+function currentSlide(n) {
+  showSlides3(slideIndex3 = n);
+}
+    
+function showSlides3(n) {
+  var i;
+  var slides3 = document.getElementsByClassName("mySlides3");
+  var dots3 = document.getElementsByClassName("demo");
+  var captionText3 = document.getElementById("caption");
+  if (n > slides3.length) {slideIndex3 = 1}
+  if (n < 1) {slideIndex3 = slides3.length}
+  for (i = 0; i < slides3.length; i++) {
+      slides3[i].style.display = "none";
+  }
+  for (i = 0; i < dots3.length; i++) {
+      dots3[i].className = dots3[i].className.replace(" active", "");
+  }
+  slides3[slideIndex3-1].style.display = "block";
+  dots3[slideIndex3-1].className += " active";
+  captionText3.innerHTML = dots3[slideIndex3-1].alt;
+}
+    
+</script>
+<script>
+$(document).ready(function(){
+    
+$("#bg").hide().fadeIn(1000);
+                                  
+// Slideshow functions
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+    
+var slideIndex2 = 0;
+showSlides2();
+
+function showSlides2() {
+    var i;
+    var slides2 = document.getElementsByClassName("mySlides2");
+    var dots2 = document.getElementsByClassName("dot2");
+    for (i = 0; i < slides2.length; i++) {
+       slides2[i].style.display = "none";
+    }
+    slideIndex2++;
+    if (slideIndex2 > slides2.length) {slideIndex2 = 1}
+    for (i = 0; i < dots2.length; i++) {
+        dots2[i].className = dots2[i].className.replace(" active", "");
+    }
+    slides2[slideIndex2-1].style.display = "block";
+    dots2[slideIndex2-1].className += " active";
+    setTimeout(showSlides2, 2000); // Change image every 2 seconds
+}
+    
+$('.nav a#clickable').click(function() {
+  $('.navbar-collapse').collapse('hide');  
+});
+    
+    
+});
+</script>
+</head>
+
+<body>
+<div class="container-fluid" id="main">
+
+<header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> 
+        <img id="logotop" src="./logo.jpg" alt="logo">
+        <div id="titletop"> 
+      		<h1> SEED SUSTAINABLE </h1>
+      		<p id="slogan"> Sustainable Investments &amp; Finance </p> 
+        </div>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="bar"><a href="./index.html">Home</a></li>
+        <li id="bar"><a href="./about.html">About</a></li>
+        <li id="bar" class="dropdown">
+            <a id="submenu1" href="./work.html"> Work</a> 
+            <a id="submenu2" class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="caret dropdown-toggle" data-toggle="dropdown"></span></a> 
+          <ul class="dropdown-menu">
+           	<li><a href="./research.html" class="active2">Investment Research</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Business Development</a></li>
+          </ul>
+        </li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header> <!-- end header ------------------------------------------------------------------>
+
+<section id="bg">
+    <section id="body">
+        <div id="IR">
+            <h1>RESEARCH IN FOCUS:</h1>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img id="slidepic" src="./slide1.jpg" alt="pic1">
+                </div>
+                <div class="mySlides fade">
+                    <img id="slidepic" src="./slide2.jpg" alt="pic2">
+                </div>
+                <div class="mySlides fade">
+                    <img id="slidepic" src="slide3.jpg" alt="pic3">
+                </div>
+                <div id="boxover">
+                    <p id="quote">&quot;My Crown is called content, <br> a crown that seldom kings enjoy&quot; </p>
+                    <hr id="length2">
+                    <p id="quote">William Shakespare</p>
+                </div>
+            </div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <br>
+            <div id="moveleft">
+                <p> I&#39;m a paragraph. Click here to add your own text and edit me. <br> It&#39;s easy. Just click &quot; Edit Text&quot; or double click me to add your own content and make changes to the font. I&#39;m a great place for youto tell a story and let your users know a little more about you.
+                </p>
+            </div>
+            <br><br>
+            <h1>INDUSTRY RESEARCH:</h1>
+            <div class="slideshow-container2">
+                <div class="mySlides2 fade">
+                    <img id="slidepic" src="./slide1.jpg" alt="pic4">
+                </div>
+                <div class="mySlides2 fade">
+                    <img id="slidepic" src="./slide2.jpg" alt="pic5">
+                </div>
+                <div class="mySlides2 fade">
+                    <img id="slidepic" src="slide3.jpg" alt="pic6">
+                </div>
+                <div id="boxover">
+                    <p id="quote">&quot;Creativity is piercing the mundane <br> to find the marvelous&quot;</p>
+                    <hr id="length2">
+                    <p id="quote">Bill Moyers</p>
+                </div>
+            </div>
+            <div style="text-align:center">
+                <span class="dot2"></span>
+                <span class="dot2"></span>
+                <span class="dot2"></span>
+            </div>
+            <br>
+            <div id="moveleft">
+                <p> I&#39;m a paragraph. Click here to add your own text and edit me. <br> It&#39;s easy. Just click &quot; Edit Text&quot; or double click me to add your own content and make changes to the font. I&#39;m a great place for youto tell a story and let your users know a little more about you.
+                </p>
+            </div>
+            <br><br>
+            
+            <div id="grid"> 
+                <div class="row">
+                  <div class="column">
+                    <img src="./gridpic.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                      <p>Cafe in Autumn</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                      <p>Mountain Lake</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                      <p>Foggy Pier</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                      <p>Cafe in Autumn 2</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic2.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                      <p>Mountain Lake 2</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic3.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                      <p>Foggy Pier 2</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+                      <p>Cafe in Autumn 3</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic2.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+                      <p>Mountain Lake 3</p>
+                  </div>
+                  <div class="column">
+                    <img src="./gridpic3.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+                      <p>Foggy Pier 3</p>
+                  </div>
+                </div>
+                
+                <div id="myModal" class="modal">
+                  <span class="close cursor" onclick="closeModal()">&times;</span>
+                  <div class="modal-content">
+
+                    <div class="mySlides3">
+                      <img class="demo" src="./gridpic.jpg" alt="Cafe in Autumn">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo"  src="./gridpic2.jpg" alt="Mountain Lake">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo" src="./gridpic3.jpg" alt="Foggy Pier">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo" src="./gridpic.jpg" alt="Cafe in Autumn 2">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo"  src="./gridpic2.jpg" alt="Mountain Lake 2">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo" src="./gridpic3.jpg" alt="Foggy Pier 2">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo" src="./gridpic.jpg" alt="Cafe in Autumn 3">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo"  src="./gridpic2.jpg" alt="Mountain Lake 3">
+                    </div>
+
+                    <div class="mySlides3">
+                      <img class="demo" src="./gridpic3.jpg" alt="Foggy Pier 3">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="caption-container">
+                      <p id="caption"></p>
+                    </div>
+                  </div>
+                </div> <!-- end id=myModal -->
+                
+            </div> <!-- end id=grid -->
+            
+        </div> <!-- end Investment Research tab -->
+
+
+
+
+    </section>  <!-- end id=body -------------------------------------------------------------->
+</section>
+
+<footer>
+    <div class="row2">
+        <div class="col-sm-4">
+            <div id="f1contain">
+            <div id="f1wrap">
+            <div id="f1">
+                <h1> SEED SUSTAINABLE </h1>
+                <p id="slogan"> Sustainable Investments &amp; Finance </p>
+            </div>
+            <img id="hstar" src="./hstar.jpg" alt="half star">
+            </div>
+            </div>
+        </div>    
+
+        <div class="col-sm-4">
+            <div id="f2a">
+                &copy;2016 Seed Sustainable  
+                <p> <a href="www.seedsustainable.com" id="link"> www.seedsustainable.com </a> </p>
+            </div>
+            <div id="f2b">
+                <p>401 Richmond St W., Suite 404
+                <br> Toronto, ON,  M5V 3A8 </p>
+            </div>
+        </div>
+        
+        <div class="col-sm-4">
+            <div id="f3a">
+                <p>401 Richmond St W., Suite 404 
+                <br> Toronto, ON,  M5V 3A8</p>    
+            </div>    
+            <div id="f3b">
+                &copy;2016 Seed Sustainable  
+                <p> <a href="www.seedsustainable.com" id="link"> www.seedsustainable.com </a> </p>
+            </div> 
+            <br>
+            <div id="media">
+                <a href="https://www.facebook.com"><img src="./fb.png" alt="facebook icon" height="30" width="30"></a>
+                <a href="https://www.twitter.com"><img src="./twitter.png" alt="facebook icon" height="30" width="30"></a>
+            </div>
+        </div>
+  </div>
+
+</footer>
+
+</div> <!-- end fluid id=main div --------------------------------------------------------->
+</body>
+</html>
